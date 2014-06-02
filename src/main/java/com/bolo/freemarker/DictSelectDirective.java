@@ -43,7 +43,7 @@ public class DictSelectDirective implements TemplateDirectiveModel {
                 builder.append(" class='").append(style).append("'");
             }
             builder.append(">");
-            if (showSelect == null || showSelect.getAsBoolean() != false) {
+            if (showSelect == null || showSelect.getAsBoolean()) {
                 builder.append("<option value='0'>");
                 // 如果默认显示值不为空，即需要显示特定的文本，则加入option值
                 if (option != null && StringUtils.isNotBlank(option.getAsString()))
