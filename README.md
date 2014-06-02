@@ -1,4 +1,5 @@
 ssm3
 ====
 
-A demo for springmvc mybatis and aspectj
+A demo for the spring-mvc mybatis and freemarker.
+一个最小化的SpringMVC、MyBatis和FreeMarker的Demo。
