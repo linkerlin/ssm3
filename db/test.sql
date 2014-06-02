@@ -47,6 +47,6 @@ CREATE TABLE `user` (
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO user VALUES ('1', '张三', '1');
+INSERT INTO user VALUES ('1', 'aaa', '1');
 INSERT INTO user VALUES ('2', '李四', '2');
 INSERT INTO user VALUES ('3', '王五', '1');
