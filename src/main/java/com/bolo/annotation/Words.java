@@ -1,23 +1,19 @@
 package com.bolo.annotation;
 
-import static java.lang.annotation.ElementType.ANNOTATION_TYPE;
-import static java.lang.annotation.ElementType.CONSTRUCTOR;
-import static java.lang.annotation.ElementType.FIELD;
-import static java.lang.annotation.ElementType.METHOD;
-import static java.lang.annotation.ElementType.PARAMETER;
-import static java.lang.annotation.RetentionPolicy.RUNTIME;
+import com.bolo.annotation.impl.WordsValidator;
 
+import javax.validation.Constraint;
+import javax.validation.Payload;
 import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
 
-import javax.validation.Constraint;
-import javax.validation.Payload;
-
-import com.bolo.annotation.impl.WordsValidator;
+import static java.lang.annotation.ElementType.*;
+import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 /**
  * 敏感词验证
+ *
  * @author 菠萝大象
  */
 @Documented
@@ -25,12 +21,12 @@ import com.bolo.annotation.impl.WordsValidator;
 @Target({METHOD, FIELD, ANNOTATION_TYPE, CONSTRUCTOR, PARAMETER})
 @Retention(RUNTIME)
 public @interface Words {
-	
-	String message() default "{constraint.default.words.message}";
 
-	Class<?>[] groups() default {};
+    String message() default "{constraint.default.words.message}";
 
-	Class<? extends Payload>[] payload() default {};
-	
-	String filed() default "";
+    Class<?>[] groups() default {};
+
+    Class<? extends Payload>[] payload() default {};
+
+    String filed() default "";
 }

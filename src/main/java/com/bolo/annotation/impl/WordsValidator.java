@@ -7,25 +7,26 @@
  */
 package com.bolo.annotation.impl;
 
+import com.bolo.annotation.Words;
+import org.apache.commons.lang.StringUtils;
+
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
-import org.apache.commons.lang.StringUtils;
-
-import com.bolo.annotation.Words;
-
 /**
  * 敏感词验证
+ *
  * @author 菠萝大象
  */
 public class WordsValidator implements ConstraintValidator<Words, String> {
 
-	@Override
-	public void initialize(Words wordsAnnotation) {}
+    @Override
+    public void initialize(Words wordsAnnotation) {
+    }
 
-	@Override
-	public boolean isValid(String value, ConstraintValidatorContext context) {
-		if(StringUtils.isBlank(value)) return Boolean.TRUE;
-		return !StringUtils.trim(value).equals("菠萝大象");
-	}
+    @Override
+    public boolean isValid(String value, ConstraintValidatorContext context) {
+        if (StringUtils.isBlank(value)) return Boolean.TRUE;
+        return !StringUtils.trim(value).equals("菠萝大象");
+    }
 }

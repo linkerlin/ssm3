@@ -13,18 +13,20 @@ File Encoding         : 65001
 Date: 2013-12-17 17:56:31
 */
 
-SET FOREIGN_KEY_CHECKS=0;
+SET FOREIGN_KEY_CHECKS = 0;
 -- ----------------------------
 -- Table structure for `role`
 -- ----------------------------
 DROP TABLE IF EXISTS `role`;
 CREATE TABLE `role` (
-  `id` int(11) NOT NULL auto_increment,
-  `name` varchar(50) default NULL,
-  `sex` char(1) default NULL,
-  `edu` char(1) default NULL,
-  PRIMARY KEY  (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `id`   INT(11) NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(50) DEFAULT NULL,
+  `sex`  CHAR(1) DEFAULT NULL,
+  `edu`  CHAR(1) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+)
+  ENGINE =InnoDB
+  DEFAULT CHARSET =utf8;
 
 -- ----------------------------
 -- Records of role
@@ -38,11 +40,13 @@ INSERT INTO role VALUES ('3', '业务管理员', '1', '0');
 -- ----------------------------
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
-  `id` int(11) NOT NULL auto_increment,
-  `username` varchar(20) default NULL,
-  `role_id` int(11) default NULL,
-  PRIMARY KEY  (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `id`       INT(11) NOT NULL AUTO_INCREMENT,
+  `username` VARCHAR(20) DEFAULT NULL,
+  `role_id`  INT(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+)
+  ENGINE =InnoDB
+  DEFAULT CHARSET =utf8;
 
 -- ----------------------------
 -- Records of user

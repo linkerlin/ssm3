@@ -1,39 +1,46 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-	<head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-		<title>角色添加/修改</title>
-		<#include "/common/meta.html"/>
-		<style type="text/css">
-			.error{color:#f00;}
-		</style>
-	</head>
-	<#import "/common/spring.ftl" as spring/>
-	<body>
-		<h1>这是RoleController的role_edit.html</h1>
-		<form action="${ctx}/role/save" method="post">
-			<input type="hidden" name="id" value="${(entity.id)!''}" />
-			<div>
-				<table width="60%" border="0" cellpadding="3" cellspacing="1">
-					<tr>
-						<td width="15%">角色名</td>
-						<td><input type="text" name="name" value="${(entity.name)!''}" />&nbsp;<label class="error" for="name" style="display:none;"></label></td>
-					</tr>
-					<tr>
-						<td width="15%">性别</td>
-						<td><@dictSelect name="sex" value=(entity.sex)!'0' type="xb01" showSelect=false /></td>
-					</tr>
-					<tr>
-						<td width="15%">学历</td>
-						<td><@dictSelect name="edu" value=(entity.edu)!'0' type="xl01" /></td>
-					</tr>
-				</table>
-			</div>
-			<div>
-				<h3><input type="submit" value="保存" /><a href="${ctx}/role">返回</a></h3>
-			</div>
-		</form>
-		<script type="text/javascript" src="${ctx}/js/jquery-min.js"></script>
-		<@spring.showErrors/>
-	</body>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>角色添加/修改</title>
+    <#include "/common/meta.html"/>
+    <style type="text/css">
+        .error {
+            color: #f00;
+        }
+    </style>
+</head>
+<#import "/common/spring.ftl" as spring/>
+<body>
+<h1>这是RoleController的role_edit.html</h1>
+
+<form action="${ctx}/role/save" method="post">
+    <input type="hidden" name="id" value="${(entity.id)!''}"/>
+
+    <div>
+        <table width="60%" border="0" cellpadding="3" cellspacing="1">
+            <tr>
+                <td width="15%">角色名</td>
+                <td><input type="text" name="name" value="${(entity.name)!''}"/>&nbsp;<label class="error" for="name"
+                                                                                             style="display:none;"></label>
+                </td>
+            </tr>
+            <tr>
+                <td width="15%">性别</td>
+                <td><@dictSelect name="sex" value=(entity.sex)!'0' type="xb01" showSelect=false /></td>
+            </tr>
+            <tr>
+                <td width="15%">学历</td>
+                <td><@dictSelect name="edu" value=(entity.edu)!'0' type="xl01" /></td>
+            </tr>
+        </table>
+    </div>
+    <div>
+        <h3><input type="submit" value="保存"/><a href="${ctx}/role">返回</a></h3>
+    </div>
+</form>
+<script type="text/javascript" src="${ctx}/js/jquery-min.js"></script>
+<@spring.showErrors/>
+</body>
 </html>
